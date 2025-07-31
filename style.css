@@ -20,9 +20,8 @@ body {
   padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .logo {
@@ -138,7 +137,10 @@ form button:hover {
   }
 
   .nav-links {
-    margin-top: 1rem;
+   display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
   }
 
   .nav-links a {
