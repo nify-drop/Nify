@@ -2,103 +2,62 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nify</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #f5f5f5;
-      color: #111;
-    }
-    header, section {
-      padding: 2rem 1rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .section-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-    .cta-button {
-      background: black;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.25rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      display: inline-block;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .cta-button:hover {
-      background: #222;
-    }
-    textarea {
-      width: 100%;
-      font-size: 1rem;
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      resize: none;
-      margin-bottom: 0.5rem;
-    }
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    form button {
-      background: black;
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nify – IA a serviço da sua liberdade</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header class="section-card">
-    <h1>Nify</h1>
-    <p style="text-align: center;">IA a serviço da sua liberdade</p>
-    <p style="text-align: center; font-weight: bold;">Roteiro profissional para Reels, TikTok ou Shorts por R$37</p>
+  <!-- Navbar -->
+  <header class="navbar">
+    <img src="logo.png" alt="Logo Nify" class="logo" />
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <!-- Seção Pix -->
-  <section class="pix-section section-card">
-    <h2>Pague R$ 37 via Pix</h2>
-    <p>Escaneie o QR Code abaixo com seu app bancário:</p>
-    <img src="qrcode.png" alt="QR Code Pix" style="max-width:250px; margin:1rem auto; display:block" />
-
-    <p>Ou toque no botão abaixo para copiar o código Pix:</p>
-    <textarea id="pixCode" rows="3" readonly>
-db1cb656-7a6b-46e5-a061-e915447d3c90
-    </textarea>
-    <button class="cta-button" onclick="copyPixCode()">Copiar código Pix</button>
-
-    <p>Após o pagamento, preencha o formulário abaixo:</p>
-    <a href="#form-section" class="cta-button">Já paguei, preencher briefing</a>
+  <!-- Seção Home -->
+  <section id="home" class="section-card">
+    <h1>Nify</h1>
+    <p class="tagline">IA a serviço da sua liberdade</p>
+    <p class="subtagline">Serviços criativos e automáticos por preços acessíveis</p>
   </section>
 
-  <!-- Formulário de briefing -->
+  <!-- Seção Produtos -->
+  <section id="produtos" class="section-card">
+    <h2>Produtos</h2>
+    <div class="produto">
+      <h3>Roteiro para Reels, TikTok ou Shorts</h3>
+      <p>Receba um roteiro sob medida por R$37</p>
+      <a href="#form-section" class="cta-button">Comprar</a>
+    </div>
+    <div class="produto">
+      <h3>Criação de legenda inteligente</h3>
+      <p>Legendas prontas para converter cliques em vendas</p>
+      <a href="#" class="cta-button">Ver detalhes</a>
+    </div>
+  </section>
+
+  <!-- Seção Portfólio -->
+  <section id="portfolio" class="section-card">
+    <h2>Portfólio</h2>
+    <p>Exemplos de projetos entregues (coloque aqui imagens futuramente)</p>
+  </section>
+
+  <!-- Seção Depoimentos -->
+  <section id="depoimentos" class="section-card">
+    <h2>Depoimentos</h2>
+    <p>Veja o que nossos clientes dizem (placeholder)</p>
+  </section>
+
+  <!-- Seção Contato / Formulário -->
   <section id="form-section" class="section-card">
     <h2>Briefing do seu vídeo</h2>
-    <form action="https://formsubmit.co/nify.drop@gmail.com" method="POST">
+    <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
       <input type="text" name="nome" placeholder="Seu nome" required>
       <input type="email" name="email" placeholder="Seu e-mail" required>
       <textarea name="publico" placeholder="Quem é o público do seu vídeo?" required></textarea>
@@ -109,15 +68,6 @@ db1cb656-7a6b-46e5-a061-e915447d3c90
       <button type="submit">Enviar briefing</button>
     </form>
   </section>
-
-  <script>
-    function copyPixCode() {
-      const pix = document.getElementById("pixCode");
-      pix.select();
-      document.execCommand("copy");
-      alert("Código Pix copiado! Agora é só abrir seu app bancário e colar.");
-    }
-  </script>
 
 </body>
 </html>
